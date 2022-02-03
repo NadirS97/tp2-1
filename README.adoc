@@ -675,6 +675,19 @@ client.test("Request executed successfully", function() {
 
 
 
+== Introduction de Consul
+
+En vous inspirant du code à l'adresse suivante https://github.com/fredmoal/demo-microservices
+sur la branche springboot24, mettez en place Consul dans votre architecture. 
+Il faudra alors changer le routing dans votre gateway avec l'appel à l'annuaire : 
+les routes seront de la forme lb://service-auth où service service-auth sera le nom de votre service d'authentification configuré dans application.properties du 
+service d'authentification. 
+
+
+
+
+
+
 
 
 
