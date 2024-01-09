@@ -16,9 +16,14 @@ Vous pouvez vous aider des dépôts suivant :
 ** https://github.com/ali-bouali/spring-boot-3-jwt-security
 ** https://github.com/fredmoal/live-demo-security
 
+Le but principal ici est d'utiliser RSA (cryptographie asymétrique). L'idée est que le service d'authentification possède un couple de clé
+(une clé secrète et une clé publique). Tous les tokens seront chiffrés (signés) avec la clé secrète. Vous pouvez utiliser le script generatekeys.sh pour générer un couple de clé.
+
+
 * Développez ensuite un service de jeu pileouface. Celui ci ne devra être accessible uniquement après authentification.
 Une fois authentifié, le service peut alors accéder à l'identifiant du joueur
-et ainsi accéder aux fonctionnalités du jeu.
+et ainsi accéder aux fonctionnalités du jeu. Le service de jeu lui devra connaître
+uniquement la clé publique  du service d'authentification.
 
 
 
