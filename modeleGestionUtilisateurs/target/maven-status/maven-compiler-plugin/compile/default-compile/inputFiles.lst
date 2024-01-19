@@ -1,5 +1,5 @@
-/home/yoh/Documents/Cours/Interrop/2021-2022/td2/microservicepileouface/modeleGestionUtilisateurs/src/main/java/authent/modele/JoueurInexistantException.java
-/home/yoh/Documents/Cours/Interrop/2021-2022/td2/microservicepileouface/modeleGestionUtilisateurs/src/main/java/authent/modele/MauvaisTokenException.java
-/home/yoh/Documents/Cours/Interrop/2021-2022/td2/microservicepileouface/modeleGestionUtilisateurs/src/main/java/authent/modele/Joueur.java
-/home/yoh/Documents/Cours/Interrop/2021-2022/td2/microservicepileouface/modeleGestionUtilisateurs/src/main/java/authent/modele/PseudoDejaPrisException.java
-/home/yoh/Documents/Cours/Interrop/2021-2022/td2/microservicepileouface/modeleGestionUtilisateurs/src/main/java/authent/modele/DesinscriptionNonAutorisee.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\MauvaisTokenException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\OperationNonAutorisee.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\PseudoDejaPrisException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\JoueurInexistantException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\Joueur.java

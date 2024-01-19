@@ -17,6 +17,8 @@
     <modules>
         <module>modeleGestionParties</module>
         <module>modeleGestionUtilisateurs</module>
+        <module>service-jeu</module>
+        <module>service-auth</module>
     </modules>
 
 </project>
