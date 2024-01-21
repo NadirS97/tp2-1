@@ -1,4 +1,4 @@
-package org.example.servicejeu.Facade;
+package jeu.facade;
 
 import pileouface.modele.Joueur;
 import pileouface.modele.MauvaisIdentifiantConnexionException;
@@ -12,22 +12,22 @@ public interface FacadeParties {
     /**
      * Permet de jouer une partie
      *
-     * @param idConnexio
+     * @param pseudo
      * @param choix
      * @return le résultat de la partie
      * @throws MauvaisIdentifiantConnexionException
      */
-    Partie jouer(String idConnexio, String choix) throws MauvaisIdentifiantConnexionException;
+    Partie jouer(String pseudo, String choix) throws MauvaisIdentifiantConnexionException;
 
 
     /**
      * Permet de récupérer les statistiques d'un joueur
-     * @param idConnexion
+     * @param pseudo
      * @return
      * @throws MauvaisIdentifiantConnexionException
      */
 
-    Statistiques getStatistiques(String idConnexion) throws MauvaisIdentifiantConnexionException;
+    Statistiques getStatistiques(String pseudo) throws MauvaisIdentifiantConnexionException;
 
     /**
      * Permet de récupérer l'historique des parties d'un joueur connecté
@@ -46,7 +46,7 @@ public interface FacadeParties {
      * @param pseudo
      * @return
      */
-    Joueur getJoueur(String pseudo);
+    Joueur getOrCreateJoueur(String pseudo);
 
 
     /**
