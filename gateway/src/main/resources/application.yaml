@@ -8,7 +8,8 @@ spring:
                 register: true
             host: ${CONSUL_HOST:localhost}
             port: ${CONSUL_PORT:8500}
-            ribbon:
+            loadbalancer:
+              ribbon:
                 enabled: false
         gateway:
             routes:
@@ -27,4 +28,4 @@ spring:
                       - RewritePath=/parties/(?<path>.*), /$\{path}
                       - PreserveHostHeader=true
 server:
-    port: 8082
+    port: 8080

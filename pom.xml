@@ -19,6 +19,7 @@
         <module>modeleGestionUtilisateurs</module>
         <module>service-jeu</module>
         <module>service-auth</module>
+        <module>gateway</module>
     </modules>
 
 </project>

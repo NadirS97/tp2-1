@@ -1,0 +1,4 @@
+Ports :
+    8080 : Gateway
+    8081 : service-auth
+    8082 : service-jeu

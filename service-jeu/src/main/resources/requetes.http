@@ -15,7 +15,7 @@ Content-Type: application/json
 
 
 
-POST http://localhost:8080/jeu/partie
+POST http://localhost:8082/jeu/partie
 Authorization: {{yoh_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -24,6 +24,6 @@ prediction=Pile
 
 ###
 
-GET http://localhost:8080/jeu/statistiques
+GET http://localhost:8082/jeu/statistiques
 Authorization: {{yoh_token}}
 Accept: application/json
