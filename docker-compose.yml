@@ -3,11 +3,13 @@ version: "3.9"
 services:
   discovery:
     image: consul:1.9
+    container_name: dev-consul
     ports:
       - 8500:8500
 
   gateway:
     image: demo-microservices/gateway
+    container_name: gateway
     ports:
       - 8080:8080
     environment:
@@ -19,6 +21,7 @@ services:
 
   auth:
     image: demo-microservices/service-auth
+    container_name: service-auth
     restart: always
     ports:
       - 8081:8081
@@ -31,6 +34,7 @@ services:
 
   parties:
     image: demo-microservices/service-jeu
+    container_name: service-jeu
     restart: always
     ports:
       - 8082:8082

@@ -53,6 +53,7 @@ public class AuthentConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST,"/authent/inscription").permitAll()
                         .requestMatchers(HttpMethod.POST,"/authent/login").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/actuator/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .csrf().disable()

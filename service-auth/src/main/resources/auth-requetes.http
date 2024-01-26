@@ -2,10 +2,10 @@
 POST http://localhost:8081/authent/inscription
 Content-Type: application/json
 
-{"email":"yohan.boichut@univ-orleans.fr", "login":"yoh4n", "password":"babar"}
+{"email":"n.saiah@etu.univ-orleans.fr", "login":"nadir", "password":"mdp123"}
 
 > {%
-    client.global.set("yoh_token", response.headers.valueOf("Authorization"));
+    client.global.set("token", response.headers.valueOf("Authorization"));
     client.test("Request executed successfully", function() {
         client.assert(response.status === 201, "Response status is not 201");
     });
@@ -15,8 +15,8 @@ Content-Type: application/json
 
 
 
-GET http://localhost:8081/authent/inscription/yoh4n
-Authorization: {{yoh_token}}
+GET http://localhost:8081/authent/inscription/nadir
+Authorization: {{token}}
 
 > {%
     client.test("Request executed successfully", function() {
@@ -26,8 +26,8 @@ Authorization: {{yoh_token}}
 
 ###
 
-DELETE http://localhost:8081/authent/inscription/yoh4n
-Authorization: {{yoh_token}}
+DELETE http://localhost:8081/authent/inscription/nadir
+Authorization: {{token}}
 
 > {%
     client.test("Request executed successfully", function() {
@@ -38,8 +38,8 @@ Authorization: {{yoh_token}}
 
 ###
 
-GET http://localhost:8081/authent/inscription/yoh4n
-Authorization: {{yoh_token}}
+GET http://localhost:8081/authent/inscription/nadir
+Authorization: {{token}}
 
 > {%
     client.test("Request executed successfully", function() {
