@@ -1,4 +1,4 @@
-POST localhost:8080/api/auth/inscription?pseudo=nadir&mdp=mdp123
+POST localhost:8080/authent/inscription?login=nadir&password=mdp123
 
 > {%
     client.test("Request executed successfully", function() {
@@ -9,19 +9,20 @@ POST localhost:8080/api/auth/inscription?pseudo=nadir&mdp=mdp123
 
 
 
-POST localhost:8080/api/auth/inscription?pseudo=nadir&mdp=fauxmdp1234
+
+
+POST localhost:8081/authent/inscription?pseudo=nadir&mdp=fauxmdp1234
 
 > {%
     client.test("Request executed successfully", function() {
         client.assert(response.status === 409, "Il y aurait du y avoir un conflit");
     });
 %}
-
 ###
 
 
 
-POST localhost:8080/api/auth/token?pseudo=nadir&mdp=mdp123
+POST localhost:8081/authent/token?pseudo=nadir&mdp=mdp123
 
 
 > {%
@@ -30,11 +31,10 @@ POST localhost:8080/api/auth/token?pseudo=nadir&mdp=mdp123
         client.assert(response.status === 200, "Le token aurait dû être créé");
     });
 %}
-
 ###
 
 
-POST localhost:8080/api/auth/token?pseudo=nadir&mdp=fauxmdp1234
+POST localhost:8081/authent/token?pseudo=yoh&mdp=fred
 
 
 > {%
@@ -46,7 +46,7 @@ POST localhost:8080/api/auth/token?pseudo=nadir&mdp=fauxmdp1234
 ###
 
 
-POST localhost:8080/api/auth/token?pseudo=fauxmdp1234&mdp=fauxmdp1234
+POST localhost:8081/authent/token?pseudo=fred&mdp=fred
 
 
 > {%
@@ -62,7 +62,7 @@ POST localhost:8080/api/auth/token?pseudo=fauxmdp1234&mdp=fauxmdp1234
 
 
 
-GET localhost:8080/api/auth/token?token={{auth_token}}
+GET localhost:8081/authent/token?token={{auth_token}}
 
 
 > {%
@@ -73,7 +73,7 @@ GET localhost:8080/api/auth/token?token={{auth_token}}
 
 ###
 
-GET localhost:8080/api/auth/token?token=rezarzerar
+GET localhost:8081/authent/token?token=rezarzerar
 
 
 > {%
@@ -86,7 +86,7 @@ GET localhost:8080/api/auth/token?token=rezarzerar
 ###
 
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -101,7 +101,7 @@ prediction=Pile
 ###
 
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: bababr
 Content-Type: application/x-www-form-urlencoded
 
@@ -116,7 +116,7 @@ prediction=Pile
 ###
 
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -124,7 +124,7 @@ prediction=Pile
 
 ###
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -132,7 +132,7 @@ prediction=Pile
 
 ###
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -144,7 +144,7 @@ prediction=Pile
 
 
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -152,7 +152,7 @@ prediction=Pile
 
 ###
 
-POST localhost:8080/api/pileouface/partie
+POST localhost:8082/jeu/partie
 token: {{auth_token}}
 Content-Type: application/x-www-form-urlencoded
 
@@ -160,7 +160,7 @@ prediction=Pile
 
 ###
 
-GET localhost:8080/api/pileouface/partie
+GET localhost:8082/jeu/partie
 token: {{auth_token}}
 
 > {%
@@ -171,7 +171,7 @@ token: {{auth_token}}
 
 ###
 
-GET localhost:8080/api/pileouface/statistiques
+GET localhost:8082/jeu/statistiques
 token: {{auth_token}}
 
 > {%
@@ -183,7 +183,7 @@ token: {{auth_token}}
 
 
 
-GET localhost:8080/api/pileouface/statistiques
+GET localhost:8082/jeu/statistiques
 token: babar
 
 > {%
@@ -193,10 +193,10 @@ token: babar
 %}
 ###
 
-DELETE http://localhost:8080/api/auth/inscription/nadir
+DELETE localhost:8081/authent/inscription/yoh
 Content-Type: application/x-www-form-urlencoded
 
-mdp=fauxmdp1234
+mdp=fred
 
 > {%
     client.test("Request executed successfully", function() {
@@ -208,10 +208,10 @@ mdp=fauxmdp1234
 
 
 
-DELETE http://localhost:8080/api/auth/inscription/fauxmdp1234
+DELETE localhost:8081/authent/inscription/fred
 Content-Type: application/x-www-form-urlencoded
 
-mdp=fauxmdp1234
+mdp=fred
 
 > {%
     client.test("Request executed successfully", function() {
@@ -221,13 +221,21 @@ mdp=fauxmdp1234
 
 ###
 
-DELETE http://localhost:8080/api/auth/inscription/nadir
+DELETE localhost:8081/authent/inscription/yoh
 Content-Type: application/x-www-form-urlencoded
 
-mdp=mdp123
+mdp=yoh
 
 > {%
     client.test("Request executed successfully", function() {
         client.assert(response.status === 200, "Le compte aurait dû être supprimé");
     });
 %}
+
+###
+
+POST http://localhost:8080/api/auth/inscription
+Content-Type: application/json
+
+{"email":"n.saiah@etu.univ-orleans.fr", "login":"nadir", "password":"mdp123"}
+
