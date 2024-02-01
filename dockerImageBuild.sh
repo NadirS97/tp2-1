@@ -1,13 +1,16 @@
 #!/bin/bash
-MVN_EXECUTABLE="D:\\JetBrains\\IntelliJ IDEA 2022.3\\plugins\\maven\\lib\\maven3\\bin\\mvn"
+
+# Construction d'images docker pour chaque microservice spring boot
 
 for dir in */ ; do
     if [ -e "$dir/pom.xml" ]; then
         echo "Building image for $dir"
         cd "$dir"
-        "$MVN_EXECUTABLE" package
+        mvn spring-boot:build-image -DskipTests
         cd ..
     fi
 done
+
+docker compose build
 
 read -p "Appuyez sur Entrée pour fermer la fenêtre..."

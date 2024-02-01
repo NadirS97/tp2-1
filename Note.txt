@@ -9,36 +9,49 @@ docker run -d --name=dev-consul -p 8500:8500 -e CONSUL_BIND_INTERFACE=eth0 consu
 Avant d'executer Docker compose il faut d'abord build les images pour chaque microservices:
 -> Onglet Maven -> microservicepileouface/gateway/Plugins/spring-boot/spring-boot:build-image
 
-Si on rencontre une erreur 51 'creator', il va falloir passer par la configuration à la main :
-1- Créer le fichier "Dockerfile" pour chaque microservices:
+Si on rencontre une erreur 51 'creator':
 ============================================================================================
+Première solution : préciser la version JVM utilisé
+============================================================================================
+L'erreur 51 vient d'une incompatibilité entre le JDK utilisé et la version de la JVM
+pour corriger l'erreur, il suffit de rajouter la balise <env> ... </env> dans le pom de chaque
+microservice :
+
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <image>
+            <name>microservices/${project.name}</name>
+            <env>
+                <BP_JVM_VERSION>17</BP_JVM_VERSION>
+            </env>
+        </image>
+    </configuration>
+</plugin>
+
+============================================================================================
+Deuxième solution : une configuration à la main
+============================================================================================
+1- Créer le fichier "Dockerfile" pour chaque microservices:
+
 FROM eclipse-temurin:17-jdk-alpine
 VOLUME /tmp
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
-============================================================================================
+
 2- Exécuter la commande package de maven pour chaque microservices:
 -> Onglet Maven -> microservicepileouface/gateway/Lifecycle/package
-============================================================================================
+
 cd .\gateway\
 docker build -t demo-microservices/gateway .
-============================================================================================
-J'ai le demo-microservices/gateway car dans le pom j'ai :
-============================================================================================
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <image>
-                        <name>demo-microservices/${project.name}</name>
-                    </image>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-============================================================================================
-Une fois le build effectué je peux lancer mon docker-compose et accéder à
-http://localhost:8500/ui/dc1/services
+
+J'utilise "demo-microservices/gateway" car dans le pom j'ai :
+
+<image>
+    <name>demo-microservices/${project.name}</name>
+</image>
+
+Une fois le build effectué, je peux lancer mon docker-compose et accéder à
+http://localhost:8500/
 
