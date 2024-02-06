@@ -24,6 +24,6 @@ prediction=Pile
 
 ###
 
-GET http://localhost:8082/jeu/statistiques BNN
+GET http://localhost:8082/jeu/statistiques
 Authorization: {{token}}
 Accept: application/json

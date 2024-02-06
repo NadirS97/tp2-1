@@ -1,4 +1,4 @@
-package authent.modele;
+package authentmodele;
 
 public class JoueurInexistantException extends Exception {
 }

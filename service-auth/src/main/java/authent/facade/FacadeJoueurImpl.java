@@ -1,8 +1,8 @@
 package authent.facade;
 
-import authent.modele.Joueur;
-import authent.modele.JoueurInexistantException;
-import authent.modele.PseudoDejaPrisException;
+import authentmodele.Joueur;
+import authentmodele.JoueurInexistantException;
+import authentmodele.PseudoDejaPrisException;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

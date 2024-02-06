@@ -1,5 +1,5 @@
-C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\MauvaisTokenException.java
-C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\OperationNonAutorisee.java
-C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\PseudoDejaPrisException.java
-C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\JoueurInexistantException.java
-C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authent\modele\Joueur.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authentmodele\PseudoDejaPrisException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authentmodele\JoueurInexistantException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authentmodele\MauvaisTokenException.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authentmodele\OperationNonAutorisee.java
+C:\Users\nadir\Desktop\Master 2\Semestre 2\Inter\tp2-1\modeleGestionUtilisateurs\src\main\java\authentmodele\Joueur.java

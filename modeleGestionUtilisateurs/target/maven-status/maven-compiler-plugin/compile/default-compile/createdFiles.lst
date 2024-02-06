@@ -1,5 +1,5 @@
-authent\modele\Joueur.class
-authent\modele\JoueurInexistantException.class
-authent\modele\MauvaisTokenException.class
-authent\modele\PseudoDejaPrisException.class
-authent\modele\OperationNonAutorisee.class
+authentmodele\MauvaisTokenException.class
+authentmodele\OperationNonAutorisee.class
+authentmodele\Joueur.class
+authentmodele\PseudoDejaPrisException.class
+authentmodele\JoueurInexistantException.class
