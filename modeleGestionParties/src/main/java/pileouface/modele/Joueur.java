@@ -11,6 +11,7 @@ public class Joueur {
     private int nbPartiesGagnees;
 
 
+
     public Joueur(String nomJoueur) {
         this.nomJoueur = nomJoueur;
         this.historique = new ArrayList<>();
